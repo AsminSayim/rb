@@ -1,0 +1,20 @@
+int s = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(3, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  s = analogRead(A0);
+  Serial.println(s);
+  if (s <90) {
+    digitalWrite(3, HIGH);
+  } else {
+    digitalWrite(3, LOW);
+  }
+  delay(10);
+}
